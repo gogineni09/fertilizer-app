@@ -10,13 +10,25 @@ from sklearn.preprocessing import LabelEncoder
 import altair as alt
 
 # -----------------------------
-# Load and display dataset
+# App Title
 # -----------------------------
 st.title("🌾 Smart Fertilizer Recommendation System")
 st.write("AI-based model to predict yield and suggest the best fertilizer mix for each crop.")
 
+# -----------------------------
+# Load Dataset
+# -----------------------------
 df = pd.read_csv("fertilizer_yield_data.csv")
-st.dataframe(df.head())
+
+st.markdown("### 📊 Dataset Preview")
+
+# Show all 200 rows if user wants
+if st.checkbox("Show full dataset"):
+    st.dataframe(df)
+else:
+    st.dataframe(df.head(10))
+
+st.info(f"✅ Loaded {len(df)} records successfully!")
 
 # -----------------------------
 # Encode categorical variables
@@ -127,4 +139,6 @@ st.altair_chart(comparison_chart, use_container_width=True)
 # Footer
 # -----------------------------
 st.markdown("---")
-st.markdown("<p style='text-align:center;'>© 2025 Greamy University | Developed by Divi Krishna</p>", unsafe_allow_html=True)
+
+
+st.markdown("<p style='text-align:center;'>© 2025 NIMS University | Developed by gogineni lekhana chowdary</p>", unsafe_allow_html=True)
