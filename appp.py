@@ -8,8 +8,9 @@ st.title("🌾 Smart Fertilizer Recommendation System")
 st.write("AI-based model to predict yield and suggest the best fertilizer mix for each crop.")
 
 df = pd.read_csv("fertilizer_yield_data.csv")
-st.subheader("📊 Sample of Your Data")
 st.dataframe(df.head())
+st.dataframe(df)
+
 
 le_crop = LabelEncoder()
 le_region = LabelEncoder()
